@@ -1,1 +1,46 @@
 @import "tailwindcss";
+
+/* Base */
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: color-mix(in oklab, #a5b4fc 55%, transparent);
+}
+
+/* Focus: consistent, visible */
+:where(a, button, input, textarea, select, summary):focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.35);
+}
+
+.skip-link {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 999;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.75rem;
+  background: rgba(15, 23, 42, 0.08);
+  color: rgb(15 23 42);
+  transform: translateY(-200%);
+  transition: transform 0.15s ease;
+}
+.skip-link:focus {
+  transform: translateY(0);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(129, 140, 248, 0.7);
+}
+
+/* Light background, subtle brand tint (aligns with logo navy) */
+body {
+  background:
+    radial-gradient(900px 500px at 12% -8%, color-mix(in oklab, #000063 8%, white), transparent 55%),
+    radial-gradient(800px 450px at 88% 0%, rgba(148, 163, 184, 0.18), transparent 50%),
+    #ffffff;
+}

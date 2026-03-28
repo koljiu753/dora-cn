@@ -1,0 +1,5 @@
+# https://doracc.com — 若部署域名不同，请同步修改 Sitemap 地址与 astro.config 中的 site
+User-agent: *
+Allow: /
+
+Sitemap: https://doracc.com/sitemap-index.xml

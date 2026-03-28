@@ -1,0 +1,27 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="页面未找到 | DORA 中文社区"
+  description="您访问的页面不存在或已移动。"
+  noindex={true}
+>
+  <div class="mx-auto max-w-6xl px-4 py-20 text-center">
+    <p class="text-sm font-medium text-[#000063]">404</p>
+    <h1 class="mt-2 text-2xl font-semibold tracking-tight text-slate-900">页面未找到</h1>
+    <p class="mt-3 text-sm text-slate-600">请检查网址是否正确，或返回首页继续浏览。</p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <a
+        href="/"
+        class="inline-flex rounded-xl bg-[#000063] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#0a0a7a]"
+        >返回首页</a
+      >
+      <a
+        href="/tutorial"
+        class="inline-flex rounded-xl border border-slate-200 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+        >教程</a
+      >
+    </div>
+  </div>
+</Layout>

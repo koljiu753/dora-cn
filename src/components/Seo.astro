@@ -1,0 +1,72 @@
+---
+/**
+ * 全站 SEO：canonical、Open Graph、Twitter、JSON-LD（WebSite + Organization）
+ */
+interface Props {
+  title: string;
+  description: string;
+  /** 不收录（预览/草稿页用） */
+  noindex?: boolean;
+  /** 相对站点根路径的分享图，默认 /logo.png */
+  ogImage?: `/${string}`;
+}
+
+const { title, description, noindex = false, ogImage = '/logo.png' } = Astro.props;
+
+const site = Astro.site;
+if (!site) {
+  throw new Error('请在 astro.config 中配置 site（如 https://doracc.com）以生成规范 URL 与站点地图。');
+}
+
+const canonical = new URL(Astro.url.pathname, site).href;
+const ogImageUrl = new URL(ogImage.replace(/^\//, ''), site).href;
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${site.href}#website`,
+      url: site.href,
+      name: 'DORA 中文社区',
+      alternateName: ['doracc', 'DORA CN'],
+      description,
+      inLanguage: 'zh-CN',
+      publisher: { '@id': `${site.href}#organization` },
+    },
+    {
+      '@type': 'Organization',
+      '@id': `${site.href}#organization`,
+      name: 'DORA 中文社区',
+      url: site.href,
+      logo: {
+        '@type': 'ImageObject',
+        url: new URL('/logo.png', site).href,
+      },
+      sameAs: ['https://github.com/dora-rs/dora', 'https://dora-rs.ai/'],
+    },
+  ],
+};
+---
+
+<link rel="canonical" href={canonical} />
+<link rel="alternate" hreflang="zh-CN" href={canonical} />
+
+<meta name="robots" content={noindex ? 'noindex, nofollow' : 'index, follow'} />
+<meta name="author" content="DORA 中文社区" />
+<meta name="keywords" content="dora-rs,DORA,机器人,数据流,Apache Arrow,零拷贝,Python,Rust,开源" />
+
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="DORA 中文社区" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonical} />
+<meta property="og:image" content={ogImageUrl} />
+<meta property="og:image:alt" content="DORA 中文社区" />
+<meta property="og:locale" content="zh_CN" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+
+<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />

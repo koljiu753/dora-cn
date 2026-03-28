@@ -1,0 +1,110 @@
+---
+const links = [
+  {
+    title: '学习',
+    items: [
+      { label: '教程', href: '/tutorial' },
+      { label: '示例', href: '/examples' },
+    ],
+  },
+  {
+    title: '资源',
+    items: [
+      { label: '官方文档（英文/中文）', href: 'https://dora-rs.ai/' },
+      { label: 'GitHub 仓库', href: 'https://github.com/dora-rs/dora' },
+    ],
+  },
+  {
+    title: '社区',
+    items: [
+      { label: '中文社区', href: '/community' },
+      { label: 'Discord', href: 'https://discord.gg/DXJ6edAtym' },
+    ],
+  },
+];
+---
+
+<footer class="border-t border-slate-200/70 bg-white">
+  <div class="mx-auto max-w-6xl px-4 py-12">
+    <div class="grid gap-10 md:grid-cols-12">
+      <div class="md:col-span-5">
+        <div class="flex items-center gap-2">
+          <img
+            src="/logo.png"
+            alt="DORA 中文社区"
+            width="36"
+            height="36"
+            class="size-9 rounded-xl ring-1 ring-slate-200 object-contain bg-white"
+            onerror="this.style.display='none'; this.nextElementSibling?.classList.remove('hidden');"
+          />
+          <span class="hidden size-9 items-center justify-center rounded-xl bg-slate-900 text-sm font-black text-white" aria-hidden="true">D</span>
+          <div>
+            <div class="text-sm font-semibold tracking-tight text-slate-900">DORA 中文社区</div>
+            <div class="text-xs text-slate-500">现代机器人开发框架的中文入口与社区</div>
+          </div>
+        </div>
+        <p class="mt-4 max-w-md text-sm leading-6 text-slate-600">
+          基于 <span class="font-medium text-slate-900">dora-rs</span> 构建，聚焦更好的中文体验：更清晰的入门路径、可复用的示例、以及持续更新的生态信息。
+        </p>
+        <p class="mt-4 max-w-md rounded-xl border border-amber-200/80 bg-amber-50/80 px-3 py-2 text-xs leading-5 text-amber-950/90">
+          <span class="font-medium">访问提示：</span>
+          本站含指向 GitHub、Discord、官方文档等外链；若您所在网络环境访问不稳定，可尝试更换网络或使用镜像/代理后再试。
+        </p>
+      </div>
+
+      <div class="grid gap-8 md:col-span-7 md:grid-cols-3">
+        {links.map((group) => (
+          <div>
+            <div class="text-sm font-semibold text-slate-900">{group.title}</div>
+            <ul class="mt-3 space-y-2">
+              {group.items.map((item) => (
+                <li>
+                  <a
+                    href={item.href}
+                    class="text-sm text-slate-600 transition hover:text-slate-900"
+                    target={item.href.startsWith('http') ? '_blank' : undefined}
+                    rel={item.href.startsWith('http') ? 'noreferrer' : undefined}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <div class="mt-10 space-y-4 border-t border-slate-200 pt-6 text-xs text-slate-500">
+      <div class="flex flex-col gap-2 md:flex-row md:flex-wrap md:items-center md:gap-x-6">
+        <span>© {new Date().getFullYear()} DORA 中文社区 · doracc.com</span>
+        <a
+          class="text-slate-600 transition hover:text-[#000063]"
+          href="https://beian.miit.gov.cn/"
+          target="_blank"
+          rel="noreferrer"
+          >苏ICP备14007268号-19</a
+        >
+        <a
+          class="text-slate-600 transition hover:text-[#000063]"
+          href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=32050602013520"
+          target="_blank"
+          rel="noreferrer"
+        >
+          苏公网安备32050602013520号
+        </a>
+      </div>
+      <div class="flex flex-wrap gap-x-4 gap-y-2">
+        <a class="transition hover:text-slate-900" href="/about">许可与声明</a>
+        <a
+          class="transition hover:text-slate-900"
+          href="https://doracc.com/"
+          target="_blank"
+          rel="noreferrer"
+          >旧版站点</a
+        >
+      </div>
+    </div>
+  </div>
+</footer>
+

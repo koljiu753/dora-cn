@@ -1,0 +1,106 @@
+---
+const methods = [
+  {
+    id: 'pip',
+    title: 'pip',
+    hint: '跨平台，适合 Python 环境',
+    code: 'pip install dora-rs-cli\ndora --help',
+  },
+  {
+    id: 'sh',
+    title: '安装脚本（Linux / macOS）',
+    hint: '官方 CLI 安装器',
+    code: "curl --proto '=https' --tlsv1.2 -LsSf https://github.com/dora-rs/dora/releases/latest/download/dora-cli-installer.sh | sh",
+  },
+  {
+    id: 'ps1',
+    title: 'PowerShell（Windows）',
+    hint: '在 PowerShell 中执行',
+    code: 'powershell -ExecutionPolicy ByPass -c "irm https://github.com/dora-rs/dora/releases/latest/download/dora-cli-installer.ps1 | iex"',
+  },
+  {
+    id: 'cargo',
+    title: 'Cargo',
+    hint: '从源码安装 CLI',
+    code: 'cargo install dora-cli',
+  },
+  {
+    id: 'docker',
+    title: 'Docker',
+    hint: '容器内试用',
+    code: 'docker pull ghcr.io/dora-rs/dora-slim\ndocker run ghcr.io/dora-rs/dora-slim dora --help',
+  },
+];
+---
+
+<section id="install" class="scroll-mt-24 border-t border-slate-200/80 bg-slate-50/80 py-14 md:py-16" aria-labelledby="install-heading">
+  <div class="mx-auto max-w-6xl px-4">
+    <div class="max-w-2xl">
+      <h2 id="install-heading" class="text-2xl font-semibold tracking-tight text-[#000063] md:text-3xl">
+        安装 CLI
+      </h2>
+      <p class="mt-2 text-sm leading-6 text-slate-600 md:text-base">
+        与
+        <a href="https://dora-rs.ai/" class="font-medium text-[#000063] underline decoration-slate-300 underline-offset-4 hover:decoration-[#000063]" target="_blank" rel="noreferrer">dora-rs.ai</a>
+        一致：任选一种方式安装后，用 <code class="rounded bg-slate-200/80 px-1.5 py-0.5 text-xs text-slate-800">dora --help</code> 验证。
+      </p>
+    </div>
+
+    <div class="mt-8 space-y-3">
+      {methods.map((m) => (
+        <details class="group rounded-2xl border border-slate-200 bg-white shadow-sm open:shadow-md open:ring-1 open:ring-slate-200/80" open={m.id === 'pip'}>
+          <summary class="flex cursor-pointer list-none items-center justify-between gap-3 rounded-2xl px-4 py-3.5 text-left text-sm font-medium text-slate-900 marker:content-none [&::-webkit-details-marker]:hidden">
+            <span>
+              {m.title}
+              <span class="mt-0.5 block text-xs font-normal text-slate-500">{m.hint}</span>
+            </span>
+            <span class="shrink-0 text-slate-400 transition group-open:rotate-180" aria-hidden="true">
+              ▼
+            </span>
+          </summary>
+          <div class="border-t border-slate-100 px-4 pb-4 pt-2">
+            <div class="relative">
+              <pre class="overflow-x-auto rounded-xl bg-slate-900 p-4 pr-24 text-xs leading-6 text-slate-100"><code id={`install-code-${m.id}`}>{m.code}</code></pre>
+              <button
+                type="button"
+                class="copy-btn absolute right-2 top-2 rounded-lg bg-white/10 px-2.5 py-1.5 text-xs font-medium text-white ring-1 ring-white/20 transition hover:bg-white/20"
+                data-copy-target={`install-code-${m.id}`}
+              >
+                复制
+              </button>
+            </div>
+          </div>
+        </details>
+      ))}
+    </div>
+
+    <p class="mt-6 text-xs text-slate-500">
+      更多安装方式（Nix、Release 压缩包等）见
+      <a href="https://dora-rs.ai/docs/guides/Installation/installing" class="font-medium text-[#000063] underline underline-offset-2 hover:no-underline" target="_blank" rel="noreferrer">官方安装指南</a>。
+    </p>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', async () => {
+      const id = btn.getAttribute('data-copy-target');
+      const el = id ? document.getElementById(id) : null;
+      const text = el?.textContent?.trim() ?? '';
+      if (!text) return;
+      try {
+        await navigator.clipboard.writeText(text);
+        const prev = btn.textContent;
+        btn.textContent = '已复制';
+        setTimeout(() => {
+          btn.textContent = prev;
+        }, 1600);
+      } catch {
+        btn.textContent = '失败';
+        setTimeout(() => {
+          btn.textContent = '复制';
+        }, 1600);
+      }
+    });
+  });
+</script>
