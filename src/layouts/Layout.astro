@@ -1,47 +1,42 @@
----
+﻿---
 import '../styles/global.css';
-import Footer from '../components/Footer.astro';
-import Header from '../components/Header.astro';
-import Seo from '../components/Seo.astro';
-
-type Props = {
-  title?: string;
-  description?: string;
-  noindex?: boolean;
-  ogImage?: `/${string}`;
-};
 
 const {
-  title = 'DORA 中文社区',
-  description = '为 AI 时代打造的现代机器人开发框架。极简 · 安全 · 高效。',
-  noindex = false,
-  ogImage = '/logo.png',
+  lang = 'zh-CN',
+  title = 'Dora 中文站',
+  description = 'Dora 中文站：面向实时 AI 数据流系统的中文化入口，帮助开发者快速理解场景并完成上手。',
+  image = '/favicon.svg',
 } = Astro.props;
+
+const canonicalUrl = Astro.url;
+const socialImage = new URL(image, Astro.url);
 ---
 
 <!doctype html>
-<html lang="zh-CN">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#ffffff" />
-    <meta name="format-detection" content="telephone=no" />
-
+    <meta name="theme-color" content="#24344d" />
+    <meta name="generator" content={Astro.generator} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content={lang} />
+    <meta property="og:site_name" content="Dora 中文站" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl.href} />
+    <meta property="og:image" content={socialImage.href} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage.href} />
+    <link rel="canonical" href={canonicalUrl.href} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
     <title>{title}</title>
-
-    <link rel="icon" type="image/png" href="/logo.png" />
-    <link rel="apple-touch-icon" href="/logo.png" />
-
-    <Seo title={title} description={description} noindex={noindex} ogImage={ogImage} />
   </head>
-  <body class="min-h-dvh bg-white text-slate-900 antialiased">
-    <a class="skip-link" href="#main">跳到主要内容</a>
-    <Header />
-    <main id="main" class="min-h-[calc(100dvh-64px)]">
-      <slot />
-    </main>
-    <Footer />
+  <body>
+    <slot />
   </body>
 </html>

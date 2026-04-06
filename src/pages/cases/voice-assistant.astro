@@ -1,0 +1,73 @@
+﻿---
+import Layout from '../../layouts/Layout.astro';
+import SiteHeader from '../../components/SiteHeader.astro';
+import SiteFooter from '../../components/SiteFooter.astro';
+---
+
+<Layout title="案例详情：语音助手 | Dora 中文站" description="语音助手场景下，Dora 如何构建低延迟实时链路与可替换节点。" lang="zh-CN">
+  <div class="page-shell">
+    <SiteHeader current="cases" />
+
+    <main class="subpage">
+      <section class="subpage-hero case-hero container">
+        <p class="section-tag">案例详情</p>
+        <h1>语音助手：持续输入与低延迟反馈的典型实时链路</h1>
+        <p>该场景重点不是单次问答正确率，而是连续交互中的响应稳定性与可维护性。</p>
+        <ul class="case-badges" aria-label="场景特征">
+          <li>低延迟</li>
+          <li>连续状态</li>
+          <li>多节点协作</li>
+        </ul>
+      </section>
+
+      <section class="container subpage-grid subpage-grid--two">
+        <article class="stack-card">
+          <h2>问题定义</h2>
+          <p>输入源持续产生音频流，需要实时识别、上下文管理、工具调用并快速返回语音输出。</p>
+        </article>
+        <article class="stack-card">
+          <h2>为什么适合 Dora</h2>
+          <p>可将 ASR、NLP、工具调用、TTS 拆成独立节点，单点替换不影响整条链路。</p>
+        </article>
+      </section>
+
+      <section class="container subpage-block">
+        <h2>参考链路</h2>
+        <ol class="flow-list">
+          <li>
+            <strong>音频输入节点</strong>
+            <p>持续接收并切片音频数据，统一采样率和格式。</p>
+          </li>
+          <li>
+            <strong>识别与理解节点</strong>
+            <p>完成语音转文本、上下文拼接和意图推理。</p>
+          </li>
+          <li>
+            <strong>工具调用节点</strong>
+            <p>按意图触发检索、检索增强或业务接口。</p>
+          </li>
+          <li>
+            <strong>语音输出节点</strong>
+            <p>把文本响应实时转语音并回传到前端或设备。</p>
+          </li>
+        </ol>
+      </section>
+
+      <section class="container subpage-block">
+        <h2>最小成功标准</h2>
+        <ul class="checklist">
+          <li>语音输入到首个可听响应的延迟稳定在目标阈值内。</li>
+          <li>任一处理节点故障时，不会导致全链路完全中断。</li>
+          <li>新增技能时可通过新增节点接入，而不是重写全流程。</li>
+        </ul>
+      </section>
+
+      <section class="container subpage-cta">
+        <a class="button button--primary" href="/quickstart">按快速开始试跑</a>
+        <a class="button button--ghost" href="/cases">返回案例总览</a>
+      </section>
+    </main>
+
+    <SiteFooter />
+  </div>
+</Layout>

@@ -1,0 +1,106 @@
+﻿---
+import Layout from '../layouts/Layout.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
+import CommandBlock from '../components/CommandBlock.astro';
+---
+
+<Layout title="快速开始 | Dora 中文站" description="Dora 快速开始：按步骤完成安装、启动和第一条数据流验证。" lang="zh-CN">
+  <div class="page-shell">
+    <SiteHeader current="quickstart" />
+
+    <main class="subpage">
+      <section class="subpage-hero container">
+        <p class="section-tag">快速开始</p>
+        <h1>目标不是看懂全部概念，而是先跑通第一条实时数据流。</h1>
+        <p>先完成最小闭环，再逐步替换输入源、处理节点和输出端，这样迭代速度最高。</p>
+      </section>
+
+      <section class="container subpage-grid subpage-grid--steps">
+        <article class="stack-card step-card">
+          <span class="step-card__id">01</span>
+          <h2>安装依赖</h2>
+          <p>在项目根目录安装依赖，确保环境可执行构建和本地调试。</p>
+          <pre><code>npm install</code></pre>
+        </article>
+        <article class="stack-card step-card">
+          <span class="step-card__id">02</span>
+          <h2>启动开发服务</h2>
+          <p>启动后默认访问本地地址，确认首页和子页面路由正常。</p>
+          <pre><code>npm run dev
+
+# http://localhost:4321</code></pre>
+        </article>
+        <article class="stack-card step-card">
+          <span class="step-card__id">03</span>
+          <h2>验证构建输出</h2>
+          <p>在合并前运行生产构建，避免路由和样式在发布时出现偏差。</p>
+          <pre><code>npm run build</code></pre>
+        </article>
+      </section>
+
+      <section class="container subpage-block">
+        <h2>可复制命令块</h2>
+        <div class="command-grid">
+          <CommandBlock title="安装依赖" code={`npm install`} hint="首次拉取后执行" />
+          <CommandBlock title="本地开发" code={`npm run dev`} hint="默认端口 4321" />
+          <CommandBlock title="生产构建" code={`npm run build`} hint="合并前建议执行" />
+        </div>
+      </section>
+
+      <section class="container subpage-block">
+        <h2>常见错误对照表</h2>
+        <div class="table-wrap">
+          <table class="doc-table" aria-label="常见错误对照">
+            <thead>
+              <tr>
+                <th>报错现象</th>
+                <th>常见原因</th>
+                <th>处理建议</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>npm.ps1 cannot be loaded</code></td>
+                <td>PowerShell 执行策略限制</td>
+                <td><code>cmd /c npm run dev</code></td>
+              </tr>
+              <tr>
+                <td><code>EADDRINUSE</code></td>
+                <td>默认端口已被占用</td>
+                <td><code>npm run dev -- --port 4322</code></td>
+              </tr>
+              <tr>
+                <td><code>Cannot find module</code></td>
+                <td>依赖未安装完整</td>
+                <td><code>npm install</code></td>
+              </tr>
+              <tr>
+                <td>页面未生成到 <code>dist</code></td>
+                <td>文件位置或路由命名不符合规则</td>
+                <td>检查 <code>src/pages</code> 并重跑 <code>npm run build</code></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="container subpage-block">
+        <h2>首轮试跑检查清单</h2>
+        <ul class="checklist">
+          <li>首页 CTA 能跳转到真实页面，而不是占位锚点。</li>
+          <li>移动端宽度下导航和卡片内容不溢出。</li>
+          <li>构建通过后 `dist` 中包含所有新增页面。</li>
+          <li>文案可以帮助用户在 30 秒内完成定位判断。</li>
+        </ul>
+      </section>
+
+      <section class="container subpage-cta">
+        <a class="button button--primary" href="/docs">回到文档中心</a>
+        <a class="button button--ghost" href="/cases">继续看案例</a>
+      </section>
+    </main>
+
+    <SiteFooter />
+  </div>
+</Layout>
