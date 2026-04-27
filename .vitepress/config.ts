@@ -48,23 +48,12 @@ export default defineConfig({
           text: '入门',
           items: [
             { text: '快速上手', link: '/guide/quick-start' },
-            { text: '核心概念', link: '/guide/concepts' },
-            { text: '安装指南', link: '/guide/installation' }
-          ]
-        },
-        {
-          text: '进阶',
-          items: [
-            { text: '编写节点', link: '/guide/write-node' },
-            { text: 'YAML 配置', link: '/guide/yaml-config' },
-            { text: '运行时', link: '/guide/runtime' },
-            { text: '分布式部署', link: '/guide/distributed' }
+            { text: '核心概念', link: '/guide/concepts' }
           ]
         },
         {
           text: '其他',
           items: [
-            { text: 'ROS 迁移指南', link: '/guide/ros-migration' },
             { text: 'FAQ', link: '/guide/faq' }
           ]
         }
@@ -73,11 +62,7 @@ export default defineConfig({
         {
           text: '示例库',
           items: [
-            { text: '全部示例', link: '/examples/' },
-            { text: 'YOLO 实时目标检测', link: '/examples/yolo' },
-            { text: '深度相机点云', link: '/examples/realsense' },
-            { text: '会说话的桌面助手', link: '/examples/voice-assistant' },
-            { text: '机械臂模仿学习', link: '/examples/lerobot' }
+            { text: '全部示例', link: '/examples/' }
           ]
         }
       ]
