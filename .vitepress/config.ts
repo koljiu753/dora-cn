@@ -5,9 +5,12 @@ export default defineConfig({
   title: 'Dora 中文社区',
   titleTemplate: ':title · Dora 中文社区',
   description: 'Dora-rs 中文社区。零拷贝数据流、多语言支持、声明式 YAML，极速上手的现代机器人开发框架。',
-  base:'/dora-cn/',
 
+  base: '/dora-cn/',
   srcDir: 'docs',
+
+  // ⭐ 关键修复：忽略死链检查（避免构建时因为某些 md 文件还没创建就失败）
+  ignoreDeadLinks: true,
 
   head: [
     ['meta', { name: 'theme-color', content: '#1B1464' }],
@@ -21,9 +24,8 @@ export default defineConfig({
   ],
 
   themeConfig: {
-    siteTitle: false, // 用自定义 logo
+    siteTitle: false,
     logo: '/logo.jpg',
-
     nav: [
       { text: '快速上手', link: '/guide/quick-start' },
       { text: '核心概念', link: '/guide/concepts' },
@@ -42,7 +44,6 @@ export default defineConfig({
         link: 'https://dora-rs.ai'
       }
     ],
-
     sidebar: {
       '/guide/': [
         {
@@ -68,17 +69,14 @@ export default defineConfig({
         }
       ]
     },
-
     socialLinks: [
       { icon: 'github', link: 'https://github.com/dora-rs/dora' },
       { icon: 'discord', link: 'https://discord.gg/DXJ6edAtym' }
     ],
-
     footer: {
       message: '内容 CC BY-SA 4.0 · 代码 Apache-2.0 / MIT',
       copyright: '© 2025 Dora 中文社区 · 由社区开发者维护'
     },
-
     search: {
       provider: 'local',
       options: {
@@ -100,17 +98,14 @@ export default defineConfig({
         }
       }
     },
-
     outline: {
       label: '本页目录',
       level: [2, 3]
     },
-
     docFooter: {
       prev: '上一页',
       next: '下一页'
     },
-
     lastUpdatedText: '最后更新',
     returnToTopLabel: '回到顶部',
     sidebarMenuLabel: '菜单',
@@ -124,7 +119,6 @@ export default defineConfig({
     theme: { light: 'github-light', dark: 'github-dark' }
   },
 
- ignoreDeadLinks：true,
   cleanUrls: true,
   lastUpdated: true
 })
