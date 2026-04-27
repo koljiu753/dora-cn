@@ -1,0 +1,47 @@
+:root {
+  /* 主色 */
+  --dora-bg: #FAFBFC;
+  --dora-bg-alt: #F3F5F9;
+  --dora-surface: #FFFFFF;
+  --dora-ink: #0B1020;
+  --dora-ink-2: #3A4256;
+  --dora-ink-3: #6B7489;
+  --dora-ink-4: #98A0B3;
+  --dora-line: #E6EAF0;
+  --dora-line-2: #EDF1F6;
+
+  /* Brand */
+  --dora-brand-deep: #1B1464;
+  --dora-brand: #2563EB;
+  --dora-brand-2: #1D4ED8;
+  --dora-brand-3: #3B82F6;
+  --dora-brand-4: #60A5FA;
+  --dora-brand-5: #DBEAFE;
+  --dora-brand-6: #EFF6FF;
+  --dora-accent: #0EA5E9;
+
+  /* VitePress 默认变量覆盖 */
+  --vp-c-brand-1: var(--dora-brand);
+  --vp-c-brand-2: var(--dora-brand-2);
+  --vp-c-brand-3: var(--dora-brand-3);
+  --vp-c-brand-soft: var(--dora-brand-6);
+
+  --vp-button-brand-bg: var(--dora-ink);
+  --vp-button-brand-hover-bg: var(--dora-brand-2);
+
+  /* 字体 */
+  --vp-font-family-base: 'Inter', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+  --vp-font-family-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+}
+
+.dark {
+  --dora-bg: #0B1020;
+  --dora-bg-alt: #111727;
+  --dora-surface: #151C2E;
+  --dora-ink: #F1F4F9;
+  --dora-ink-2: #C7CDD8;
+  --dora-ink-3: #98A0B3;
+  --dora-ink-4: #6B7489;
+  --dora-line: #1F2738;
+  --dora-line-2: #1A2233;
+}

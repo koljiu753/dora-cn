@@ -1,4 +1,0 @@
-﻿User-agent: *
-Allow: /
-
-Sitemap: https://dora-cn.pages.dev/sitemap.xml

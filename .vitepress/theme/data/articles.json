@@ -1,0 +1,62 @@
+[
+  {
+    "title": "官宣！Dora-rs 官方中文教程正式发布",
+    "url": "https://www.oschina.net/news/361526",
+    "author": "技安未来",
+    "platform": "OSCHINA / 博客园",
+    "date": "2025-07-21",
+    "category": "tutorial",
+    "categoryLabel": "官方教程",
+    "summary": "为帮助中文开发者真正掌握 Dora-rs，我们推出了系统化的中文教程文档。"
+  },
+  {
+    "title": "社区集结令：Dora-rs 官方交流群正式开放",
+    "url": "https://blog.csdn.net/tgxz2000/article/details/149804414",
+    "author": "tgxz2000",
+    "platform": "CSDN",
+    "date": "2025-08-01",
+    "category": "community",
+    "categoryLabel": "社区",
+    "summary": "学习一门新技术总会遇到问题，这里有同样在探索 Dora 的伙伴。"
+  },
+  {
+    "title": "DORA 机器人中间件学习教程（1）—— Dora-rs 安装",
+    "url": "https://blog.csdn.net/crp997576280/article/details/135368894",
+    "author": "crp997576280",
+    "platform": "CSDN",
+    "date": "2024-01-06",
+    "category": "tutorial",
+    "categoryLabel": "入门",
+    "summary": "基于 Rust 实现的机器人框架，使用 Apache Arrow 减少数据重复拷贝。"
+  },
+  {
+    "title": "Dora-rs：下一代机器人开发框架",
+    "url": "https://zhuanlan.zhihu.com/p/1900517691153970033",
+    "author": "知乎专栏",
+    "platform": "知乎",
+    "date": "2025-05-14",
+    "category": "deep-dive",
+    "categoryLabel": "深度",
+    "summary": "在 AI 与机器人技术深度融合的时代，基于 Rust 的高性能机器人框架。"
+  },
+  {
+    "title": "一个可替代 ROS 的开源软件 Dora-rs，得到 HuggingFace 联合创始人 Thomas Wolf 点赞",
+    "url": "https://zhuanlan.zhihu.com/p/693510961",
+    "author": "知乎专栏",
+    "platform": "知乎",
+    "date": "2024-04-15",
+    "category": "news",
+    "categoryLabel": "资讯",
+    "summary": "更容易安装并完全集成到 Python 生态系统中。"
+  },
+  {
+    "title": "【Rust 日报】2023-01-10 dora-rs：机器人中间件项目",
+    "url": "https://rustcc.cn/article?id=04867a4f-d451-424a-9b1c-543e84f9ca7f",
+    "author": "babpstep",
+    "platform": "Rust 中文社区",
+    "date": "2023-01-10",
+    "category": "news",
+    "categoryLabel": "日报",
+    "summary": "Rust 语言中文社区对 dora-rs 项目的早期介绍。"
+  }
+]
