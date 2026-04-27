@@ -1,0 +1,301 @@
+/* ============= 字体平滑 & 重置 ============= */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html, body {
+  background: var(--dora-bg);
+}
+
+body {
+  font-family: 'Inter', 'Noto Sans SC', system-ui, -apple-system, sans-serif;
+  font-feature-settings: "ss01", "cv11";
+}
+
+.mono {
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+/* ============= Display 字体 ============= */
+.display {
+  font-family: 'Inter', 'Noto Sans SC', sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
+}
+
+/* ============= 渐变文字 ============= */
+.gradient-text-blue {
+  background: linear-gradient(135deg, #1B1464 0%, #2563EB 60%, #3B82F6 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ============= 文字色工具 ============= */
+.text-ink   { color: var(--dora-ink); }
+.text-ink-2 { color: var(--dora-ink-2); }
+.text-ink-3 { color: var(--dora-ink-3); }
+.text-ink-4 { color: var(--dora-ink-4); }
+.text-brand { color: var(--dora-brand); }
+.text-brand-deep { color: var(--dora-brand-deep); }
+.text-brand-2 { color: var(--dora-brand-2); }
+
+.bg-brand   { background: var(--dora-brand); }
+.bg-brand-deep { background: var(--dora-brand-deep); }
+.bg-brand-5 { background: var(--dora-brand-5); }
+.bg-brand-6 { background: var(--dora-brand-6); }
+.bg-bg-alt  { background: var(--dora-bg-alt); }
+
+.border-line   { border-color: var(--dora-line); }
+.border-line-2 { border-color: var(--dora-line-2); }
+
+/* ============= 按钮 ============= */
+.dora-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.8rem 1.3rem;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.dora-btn-primary {
+  background: var(--dora-ink);
+  color: #fff;
+  box-shadow: 0 1px 2px rgba(11, 16, 32, 0.08), 0 8px 24px -8px rgba(11, 16, 32, 0.25);
+}
+.dora-btn-primary:hover {
+  background: var(--dora-brand-2);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(37, 99, 235, 0.15), 0 12px 32px -8px rgba(37, 99, 235, 0.45);
+  color: #fff;
+}
+.dora-btn-secondary {
+  background: #fff;
+  color: var(--dora-ink);
+  border: 1px solid var(--dora-line);
+}
+.dora-btn-secondary:hover {
+  border-color: #C4CCDB;
+  background: var(--dora-bg-alt);
+  color: var(--dora-ink);
+}
+
+/* ============= 卡片 ============= */
+.dora-card {
+  background: #fff;
+  border: 1px solid var(--dora-line);
+  border-radius: 16px;
+  transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+.dora-card-hover:hover {
+  border-color: #C7D2E4;
+  box-shadow: 0 1px 2px rgba(11, 16, 32, 0.04), 0 20px 40px -20px rgba(37, 99, 235, 0.22);
+  transform: translateY(-2px);
+}
+
+/* ============= 背景图案 ============= */
+.grid-pattern {
+  background-image:
+    linear-gradient(to right, rgba(11, 16, 32, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(11, 16, 32, 0.04) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+.dot-pattern {
+  background-image: radial-gradient(circle, rgba(37, 99, 235, 0.18) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.hero-glow::before {
+  content: "";
+  position: absolute;
+  top: -15%;
+  left: 50%;
+  width: 1400px;
+  height: 900px;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(ellipse at 50% 0%, rgba(27, 20, 100, 0.18), transparent 55%),
+    radial-gradient(ellipse at 50% 30%, rgba(59, 130, 246, 0.18), transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ============= 动画 ============= */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: none; }
+}
+.rise { animation: rise 0.7s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.d1 { animation-delay: 0.05s; }
+.d2 { animation-delay: 0.12s; }
+.d3 { animation-delay: 0.20s; }
+.d4 { animation-delay: 0.28s; }
+.d5 { animation-delay: 0.36s; }
+
+@keyframes flow {
+  0%   { stroke-dashoffset: 120; opacity: 0; }
+  20%  { opacity: 1; }
+  100% { stroke-dashoffset: 0; opacity: 1; }
+}
+.flow-line {
+  stroke-dasharray: 5 6;
+  animation: flow 2.6s linear infinite;
+}
+
+@keyframes pulse-ring {
+  0%   { transform: scale(0.8); opacity: 0.8; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+.pulse-ring { animation: pulse-ring 2s ease-out infinite; }
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%      { opacity: 0.3; }
+}
+.blink { animation: blink 2s infinite; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee { animation: marquee 50s linear infinite; }
+
+@keyframes float-bot {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+.float-bot { animation: float-bot 3.5s ease-in-out infinite; }
+
+/* ============= 代码 token ============= */
+.tk-k { color: #CF222E; }
+.tk-s { color: #0A3069; }
+.tk-v { color: #0550AE; }
+.tk-c { color: #6B7489; font-style: italic; }
+.tk-n { color: #1F2328; }
+
+/* ============= chip ============= */
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--dora-bg-alt);
+  color: var(--dora-ink-2);
+  border: 1px solid var(--dora-line);
+}
+.chip-brand {
+  background: var(--dora-brand-6);
+  color: var(--dora-brand);
+  border-color: rgba(37, 99, 235, 0.2);
+}
+.chip-green {
+  background: #ECFDF5;
+  color: #047857;
+  border-color: #A7F3D0;
+}
+.chip-purple {
+  background: #F5F3FF;
+  color: #6D28D9;
+  border-color: #DDD6FE;
+}
+.chip-orange {
+  background: #FFF7ED;
+  color: #C2410C;
+  border-color: #FED7AA;
+}
+
+/* ============= section eyebrow ============= */
+.section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  background: var(--dora-brand-6);
+  color: var(--dora-brand);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+.section-eyebrow::before {
+  content: "";
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--dora-brand);
+}
+
+/* ============= tab ============= */
+.tab {
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--dora-ink-3);
+  transition: all 0.2s;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid transparent;
+}
+.tab:hover { color: var(--dora-ink); }
+.tab.active {
+  background: #fff;
+  color: var(--dora-ink);
+  border-color: var(--dora-line);
+  box-shadow: 0 1px 2px rgba(11, 16, 32, 0.04);
+}
+
+/* ============= 工具类 ============= */
+.df-node {
+  fill: #fff;
+  stroke-width: 1.5;
+  filter: drop-shadow(0 4px 10px rgba(37, 99, 235, 0.08));
+}
+
+.ulink {
+  position: relative;
+  transition: color 0.2s;
+}
+.ulink::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 1.5px;
+  background: var(--dora-brand);
+  transition: width 0.25s ease;
+}
+.ulink:hover { color: var(--dora-brand); }
+.ulink:hover::after { width: 100%; }
+
+/* ============= 选中文字 ============= */
+::selection {
+  background: var(--dora-brand-5);
+  color: var(--dora-ink);
+}
+
+/* ============= 滚动条 ============= */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--dora-bg-alt); }
+::-webkit-scrollbar-thumb {
+  background: var(--dora-line);
+  border: 2px solid var(--dora-bg-alt);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover { background: var(--dora-brand-4); }
+
+/* ============= details / summary ============= */
+details > summary { list-style: none; cursor: pointer; }
+details > summary::-webkit-details-marker { display: none; }

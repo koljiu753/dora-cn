@@ -1,0 +1,68 @@
+name: Deploy VitePress site
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v4
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Build with VitePress
+        run: npm run build
+
+      - name: Locate dist directory
+        id: dist
+        run: |
+          if [ -d "docs/.vitepress/dist" ]; then
+            echo "DIST_PATH=docs/.vitepress/dist" >> $GITHUB_OUTPUT
+            echo "✅ Found dist at docs/.vitepress/dist"
+          elif [ -d ".vitepress/dist" ]; then
+            echo "DIST_PATH=.vitepress/dist" >> $GITHUB_OUTPUT
+            echo "✅ Found dist at .vitepress/dist"
+          else
+            echo "❌ ERROR: dist directory not found anywhere"
+            echo "Searching for dist directories..."
+            find . -name "dist" -type d 2>/dev/null
+            exit 1
+          fi
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ steps.dist.outputs.DIST_PATH }}
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

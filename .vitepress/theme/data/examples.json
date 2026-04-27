@@ -1,0 +1,74 @@
+[
+  {
+    "id": "yolo",
+    "title": "实时目标检测",
+    "tags": ["YOLOv8", "python", "3 节点"],
+    "category": "vision",
+    "level": "beginner",
+    "duration": "5 min",
+    "description": "摄像头 → YOLO → Rerun 可视化。10 行 YAML 看懂数据流。",
+    "link": "/examples/yolo",
+    "graphTheme": "blue",
+    "isNew": false
+  },
+  {
+    "id": "voice-assistant",
+    "title": "会说话的桌面助手",
+    "tags": ["Whisper", "Qwen", "6 节点"],
+    "category": "llm",
+    "level": "intermediate",
+    "duration": "20 min",
+    "description": "语音唤醒 · 语音识别 · 大模型推理 · 合成回复，全本地运行。",
+    "link": "/examples/voice-assistant",
+    "graphTheme": "sky",
+    "isNew": false
+  },
+  {
+    "id": "lerobot",
+    "title": "机械臂模仿学习",
+    "tags": ["LeRobot", "VLA", "8 节点"],
+    "category": "embodied",
+    "level": "advanced",
+    "duration": "2 hr",
+    "description": "采集数据 → 训练策略 → 部署推理，端到端一张图。",
+    "link": "/examples/lerobot",
+    "graphTheme": "indigo",
+    "isNew": true
+  },
+  {
+    "id": "realsense",
+    "title": "深度相机点云可视化",
+    "tags": ["RealSense", "Open3D", "4 节点"],
+    "category": "vision",
+    "level": "beginner",
+    "duration": "10 min",
+    "description": "Intel RealSense 深度流 → 点云 → 实时 3D 渲染。",
+    "link": "/examples/realsense",
+    "graphTheme": "cyan",
+    "isNew": false
+  },
+  {
+    "id": "slam",
+    "title": "2D 激光建图导航",
+    "tags": ["SLAM", "FAST-LIO", "5 节点"],
+    "category": "slam",
+    "level": "intermediate",
+    "duration": "40 min",
+    "description": "激光雷达 + 里程计融合，构建地图并实时定位。",
+    "link": "/examples/slam",
+    "graphTheme": "blue",
+    "isNew": false
+  },
+  {
+    "id": "multi-cam-sync",
+    "title": "多路相机时间同步",
+    "tags": ["Rust", "Multi-cam sync", "5 节点"],
+    "category": "hardware",
+    "level": "advanced",
+    "duration": "1 hr",
+    "description": "纯 Rust 节点，硬件时间戳对齐，用于传感器融合。",
+    "link": "/examples/multi-cam-sync",
+    "graphTheme": "sky",
+    "isNew": false
+  }
+]

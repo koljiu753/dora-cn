@@ -1,0 +1,61 @@
+name: Update GitHub Stats
+
+on:
+  schedule:
+    # 每天北京时间 8 点（UTC 0 点）跑一次
+    - cron: '0 0 * * *'
+  workflow_dispatch: # 允许手动触发
+
+permissions:
+  contents: write
+
+jobs:
+  update-stats:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch dora-rs/dora stats
+        id: stats
+        run: |
+          REPO_DATA=$(curl -s https://api.github.com/repos/dora-rs/dora)
+          RELEASE_DATA=$(curl -s https://api.github.com/repos/dora-rs/dora/releases/latest)
+
+          STARS=$(echo "$REPO_DATA" | jq -r '.stargazers_count')
+          FORKS=$(echo "$REPO_DATA" | jq -r '.forks_count')
+          VERSION=$(echo "$RELEASE_DATA" | jq -r '.tag_name // "v0.3"')
+
+          # 格式化 stars (3500 -> 3.5k)
+          if [ "$STARS" -gt 1000 ]; then
+            STARS_FMT=$(awk "BEGIN {printf \"%.1fk\", $STARS / 1000}")
+          else
+            STARS_FMT="$STARS"
+          fi
+
+          DATE=$(date -u +"%Y-%m-%d")
+
+          cat > .vitepress/theme/data/stats.json <<EOF
+          {
+            "stars": "$STARS_FMT",
+            "starsRaw": $STARS,
+            "forks": "$FORKS",
+            "version": "$VERSION",
+            "lastUpdated": "$DATE",
+            "_note": "本文件由 .github/workflows/update-stats.yml 自动更新,无需手动修改"
+          }
+          EOF
+
+          echo "Updated: $STARS stars, $FORKS forks, version $VERSION"
+
+      - name: Commit changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add .vitepress/theme/data/stats.json
+
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "chore: update GitHub stats [skip ci]"
+            git push
+          fi
