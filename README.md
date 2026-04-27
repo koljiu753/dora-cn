@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./public/logo.svg" width="80" alt="Dora 中文社区" />
+  <img src="./public/logo.jpg" width="80" alt="Dora 中文社区" />
   <h1>Dora 中文社区</h1>
   <p><strong>为具身智能而生的现代机器人开发框架</strong></p>
   <p>

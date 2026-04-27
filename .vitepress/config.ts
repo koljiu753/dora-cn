@@ -21,7 +21,7 @@ export default defineConfig({
 
   themeConfig: {
     siteTitle: false, // 用自定义 logo
-    logo: '/logo.svg',
+    logo: '/logo.jpg',
 
     nav: [
       { text: '快速上手', link: '/guide/quick-start' },
