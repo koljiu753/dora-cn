@@ -5,6 +5,7 @@ export default defineConfig({
   title: 'Dora 中文社区',
   titleTemplate: ':title · Dora 中文社区',
   description: 'Dora-rs 中文社区。零拷贝数据流、多语言支持、声明式 YAML，极速上手的现代机器人开发框架。',
+  base:'/dora-cn/',
 
   srcDir: 'docs',
 
