@@ -10,10 +10,13 @@ export default defineConfig({
   srcDir: 'docs',
   ignoreDeadLinks: true,
 
-  head: [
-    // ⭐ 关键修复:加载 Tailwind CSS,让所有 flex/grid/text-center 等工具类生效
-    ['script', { src: 'https://cdn.tailwindcss.com' }],
+  // ⭐ 关键：让 VitePress 从仓库根目录的 public/ 加载静态资源
+  // 因为 srcDir='docs',VitePress 默认会找 docs/public,这里改成相对 srcDir 的 ../public
+  vite: {
+    publicDir: '../public'
+  },
 
+  head: [
     ['meta', { name: 'theme-color', content: '#1B1464' }],
     ['meta', { property: 'og:title', content: 'Dora 中文社区' }],
     ['meta', { property: 'og:description', content: '为具身智能而生的现代机器人开发框架' }],
@@ -26,7 +29,7 @@ export default defineConfig({
 
   themeConfig: {
     siteTitle: false,
-    logo: '/logo.svg',
+    logo: '/logo.jpg',
 
     nav: [
       { text: '快速上手', link: '/guide/quick-start' },
