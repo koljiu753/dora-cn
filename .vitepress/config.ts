@@ -7,13 +7,13 @@ export default defineConfig({
   description: 'Dora-rs 中文社区。零拷贝数据流、多语言支持、声明式 YAML，极速上手的现代机器人开发框架。',
 
   base: '/dora-cn/',
-  srcDir:'docs',
-  ignoreDeadLinks:true,
-
-  // ⭐ 关键修复：忽略死链检查（避免构建时因为某些 md 文件还没创建就失败）
+  srcDir: 'docs',
   ignoreDeadLinks: true,
 
   head: [
+    // ⭐ 关键修复:加载 Tailwind CSS,让所有 flex/grid/text-center 等工具类生效
+    ['script', { src: 'https://cdn.tailwindcss.com' }],
+
     ['meta', { name: 'theme-color', content: '#1B1464' }],
     ['meta', { property: 'og:title', content: 'Dora 中文社区' }],
     ['meta', { property: 'og:description', content: '为具身智能而生的现代机器人开发框架' }],
@@ -26,7 +26,8 @@ export default defineConfig({
 
   themeConfig: {
     siteTitle: false,
-    logo: '/logo.jpg',
+    logo: '/logo.svg',
+
     nav: [
       { text: '快速上手', link: '/guide/quick-start' },
       { text: '核心概念', link: '/guide/concepts' },
@@ -35,16 +36,13 @@ export default defineConfig({
         text: '社区',
         items: [
           { text: '加入社群', link: '/community' },
-          { text: '投稿', link: '/community#contribute' },
           { text: 'GitHub Discussions', link: 'https://github.com/orgs/dora-rs/discussions' }
         ]
       },
       { text: 'FAQ', link: '/guide/faq' },
-      {
-        text: '🌐 EN',
-        link: 'https://dora-rs.ai'
-      }
+      { text: '🌐 EN', link: 'https://dora-rs.ai' }
     ],
+
     sidebar: {
       '/guide/': [
         {
@@ -70,14 +68,17 @@ export default defineConfig({
         }
       ]
     },
+
     socialLinks: [
       { icon: 'github', link: 'https://github.com/dora-rs/dora' },
       { icon: 'discord', link: 'https://discord.gg/DXJ6edAtym' }
     ],
+
     footer: {
       message: '内容 CC BY-SA 4.0 · 代码 Apache-2.0 / MIT',
       copyright: '© 2025 Dora 中文社区 · 由社区开发者维护'
     },
+
     search: {
       provider: 'local',
       options: {
@@ -99,14 +100,9 @@ export default defineConfig({
         }
       }
     },
-    outline: {
-      label: '本页目录',
-      level: [2, 3]
-    },
-    docFooter: {
-      prev: '上一页',
-      next: '下一页'
-    },
+
+    outline: { label: '本页目录', level: [2, 3] },
+    docFooter: { prev: '上一页', next: '下一页' },
     lastUpdatedText: '最后更新',
     returnToTopLabel: '回到顶部',
     sidebarMenuLabel: '菜单',
