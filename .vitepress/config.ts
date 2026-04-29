@@ -7,6 +7,8 @@ export default defineConfig({
   description: 'Dora-rs 中文社区。零拷贝数据流、多语言支持、声明式 YAML，极速上手的现代机器人开发框架。',
 
   base: '/dora-cn/',
+  srcDir:'docs',
+  ignoreDeadLinks:true,
 
   // ⭐ 关键修复：忽略死链检查（避免构建时因为某些 md 文件还没创建就失败）
   ignoreDeadLinks: true,
