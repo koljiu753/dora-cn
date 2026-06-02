@@ -2,6 +2,10 @@
 
 让你从零到跑通第一个 Dora 数据流，**只需 5 分钟**。
 
+::: tip 你现在在哪一步？
+如果你第一次接触 Dora，建议先按本文跑通 demo，再读[核心概念](/guide/concepts)。如果你已经有 ROS 经验，可以之后再看[ROS 工程师迁移指南](/guide/ros-migration)。
+:::
+
 ## 前置条件
 
 - Python 3.9 或更高版本

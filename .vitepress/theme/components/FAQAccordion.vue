@@ -12,7 +12,7 @@ function renderMd(text: string) {
            style="background: linear-gradient(to bottom, #fff, rgba(239,246,255,0.3), #fff);">
     <div class="max-w-5xl mx-auto px-6">
       <div class="text-center mb-12 max-w-3xl mx-auto">
-        <div class="section-eyebrow mb-5 inline-flex">06 · 常见疑问</div>
+        <div class="section-eyebrow mb-5 inline-flex">07 · 常见疑问</div>
         <h2 class="display mb-4" style="font-size: clamp(2rem, 5vw, 3rem);">
           问得最多的<span class="gradient-text-blue">几个问题</span>
         </h2>

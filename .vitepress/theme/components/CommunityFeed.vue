@@ -17,12 +17,12 @@ function chipClass(category: string) {
   <section id="community" class="py-24 bg-white border-t" style="border-color: var(--dora-line-2);">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center mb-14 max-w-3xl mx-auto">
-        <div class="section-eyebrow mb-5 inline-flex">05 · 社区动态</div>
+        <div class="section-eyebrow mb-5 inline-flex">06 · 社区动态</div>
         <h2 class="display mb-5" style="font-size: clamp(2rem, 5vw, 3rem);">
-          中文开发者的<span class="gradient-text-blue">真实分享</span>
+          让中文内容持续流动起来。
         </h2>
         <p class="text-ink-2 leading-relaxed">
-          来自 CSDN、知乎、博客园等平台的真实中文教程与经验贴。
+          成熟社区需要可追踪的内容、问题和贡献记录。这里收录中文教程、实践记录、版本动态和社区公告。
         </p>
       </div>
 
@@ -68,12 +68,12 @@ function chipClass(category: string) {
             <div class="absolute -top-10 -right-10 w-40 h-40 rounded-full opacity-30"
                  style="background: radial-gradient(circle, #60A5FA, transparent 60%);"></div>
             <div class="relative">
-              <div class="mono text-xs text-brand mb-2">⋙ 征稿令</div>
-              <h3 class="text-2xl font-bold mb-3">你写教程，<br/>我们帮你扩散。</h3>
+              <div class="mono text-xs text-brand mb-2">CONTRIBUTION</div>
+              <h3 class="text-2xl font-bold mb-3">把你的 Dora 经验<br/>变成后来者的路标。</h3>
               <p class="text-sm text-ink-2 leading-relaxed mb-5">
-                你在用 Dora 搞机器人或具身智能？哪怕只是一个 demo 记录——发我们 PR 或公众号投稿，我们帮你润色、上首页、推到 GitHub Discussions。
+                Demo 复现、报错排查、ROS 迁移、硬件接入、源码阅读都可以投稿。社区会帮你整理标题、补充上下文，并收录到首页。
               </p>
-              <a href="#" class="dora-btn dora-btn-primary text-sm">提交一篇文章 →</a>
+              <a href="/community#contribute" class="dora-btn dora-btn-primary text-sm">提交内容 →</a>
             </div>
           </div>
 
@@ -103,7 +103,7 @@ function chipClass(category: string) {
           </div>
 
           <div class="dora-card p-6">
-            <div class="mono text-xs text-brand mb-3">⋙ 哪里能找到我们</div>
+            <div class="mono text-xs text-brand mb-3">WHERE TO JOIN</div>
             <div class="space-y-2">
               <a href="https://github.com/dora-rs/dora" target="_blank" rel="noopener" class="join-row group">
                 <div class="flex items-center gap-3">

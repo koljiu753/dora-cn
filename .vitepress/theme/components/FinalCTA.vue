@@ -25,11 +25,11 @@ function copy() {
         </div>
       </div>
       <h2 class="display mb-6" style="font-size: clamp(2.5rem, 7vw, 5rem); line-height: 1;">
-        别再看了。<br />
-        <span style="color:#BFDBFE;">pip install</span> 一下试试。
+        从一个 Demo 开始，<br />
+        再把经验带回社区。
       </h2>
       <p class="text-lg max-w-xl mx-auto mb-10 leading-relaxed" style="color: rgba(219, 234, 254, 0.9);">
-        从这一刻到看到第一个数据流跑起来，比你泡一杯咖啡的时间还短。
+        先跑通，再改节点，再提一个问题或一篇记录。DoraCN 的价值会随着每一次真实使用变得更扎实。
       </p>
 
       <div class="max-w-xl mx-auto rounded-xl overflow-hidden mb-8 backdrop-blur border"
@@ -46,7 +46,7 @@ function copy() {
 
       <div class="flex flex-wrap items-center justify-center gap-3">
         <a href="/guide/quick-start" class="dora-btn" style="background:white;color:#1D4ED8;font-weight:600;box-shadow:0 20px 40px -12px rgba(0,0,0,0.4);">
-          🚀 跑通第一个 Demo
+          跑通第一个 Demo
         </a>
         <a href="/guide/concepts" class="dora-btn backdrop-blur"
            style="background:rgba(255,255,255,0.1);color:white;border:1px solid rgba(255,255,255,0.2);">

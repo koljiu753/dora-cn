@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* ============= 字体平滑 & 重置 ============= */
 * {
   -webkit-font-smoothing: antialiased;
@@ -6,6 +10,7 @@
 
 html, body {
   background: var(--dora-bg);
+  overflow-x: hidden;
 }
 
 body {
@@ -21,7 +26,7 @@ body {
 .display {
   font-family: 'Inter', 'Noto Sans SC', sans-serif;
   font-weight: 800;
-  letter-spacing: -0.035em;
+  letter-spacing: 0;
   line-height: 1.05;
 }
 
@@ -59,7 +64,7 @@ body {
   padding: 0.8rem 1.3rem;
   font-weight: 500;
   font-size: 0.95rem;
-  border-radius: 10px;
+  border-radius: 8px;
   transition: all 0.2s ease;
   white-space: nowrap;
   text-decoration: none;
@@ -90,8 +95,13 @@ body {
 .dora-card {
   background: #fff;
   border: 1px solid var(--dora-line);
-  border-radius: 16px;
+  border-radius: 8px;
+  min-width: 0;
   transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+}
+
+pre, code {
+  max-width: 100%;
 }
 .dora-card-hover:hover {
   border-color: #C7D2E4;

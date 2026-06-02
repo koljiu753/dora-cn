@@ -6,7 +6,7 @@ export default defineConfig({
   titleTemplate: ':title · Dora 中文社区',
   description: 'Dora-rs 中文社区。零拷贝数据流、多语言支持、声明式 YAML，极速上手的现代机器人开发框架。',
 
-  base: '/dora-cn/',
+  base: '/',
   srcDir: 'docs',
   ignoreDeadLinks: true,
 
@@ -52,7 +52,9 @@ export default defineConfig({
           text: '入门',
           items: [
             { text: '快速上手', link: '/guide/quick-start' },
-            { text: '核心概念', link: '/guide/concepts' }
+            { text: '核心概念', link: '/guide/concepts' },
+            { text: '写自己的节点', link: '/guide/write-node' },
+            { text: 'ROS 迁移指南', link: '/guide/ros-migration' }
           ]
         },
         {

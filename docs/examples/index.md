@@ -41,5 +41,5 @@ Intel RealSense 深度流 → 点云 → 实时 3D 渲染。
 ---
 
 ::: tip 想贡献示例？
-我们欢迎社区贡献新的示例。请遵循 [示例投稿模板](https://github.com/koljiu753/dora-cn/issues/new?template=example.md)。
+我们欢迎社区贡献新的示例。请遵循 [示例投稿模板](https://github.com/koljiu753/dora-cn/issues/new?template=example-submission.md)。
 :::

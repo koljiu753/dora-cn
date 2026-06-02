@@ -31,31 +31,33 @@ function copyInstall() {
           </div>
         </div>
 
-        <!-- 主标题 -->
         <h1 class="display rise d2 mx-auto max-w-4xl"
             style="font-size: clamp(2.6rem, 6vw, 5rem); margin-bottom: 1.5rem;">
-          为<span class="gradient-text-blue">具身智能</span>而生的<br />
-          现代机器人开发框架
+          Dora 中文社区
         </h1>
 
-        <!-- 副文案 -->
-        <p class="text-lg text-ink-2 max-w-2xl leading-relaxed rise d3 mx-auto mb-10">
-          把复杂的机器人应用抽象成一张<span class="text-ink font-medium">有向数据流图</span>。
-          写一份 YAML，让摄像头、模型、机械臂在<span class="font-semibold text-brand-deep">零拷贝共享内存</span>上协同运转。
-          <br class="hidden md:inline" />
-          我们是面向中国开发者的 dora-rs 学习社区——让你从「听说过」到「跑通 demo」只需
-          <span class="mono font-medium text-ink">5 分钟</span>。
+        <p class="display rise d2 mx-auto max-w-4xl text-ink"
+           style="font-size: clamp(1.8rem, 4vw, 3.2rem); margin-top: -0.5rem; margin-bottom: 1.5rem;">
+          从第一条数据流开始，学习现代机器人开发。
         </p>
 
-        <!-- CTA -->
+        <p class="text-lg text-ink-2 max-w-2xl leading-relaxed rise d3 mx-auto mb-10">
+          DoraCN 面向中国开发者维护 Dora / dora-rs 的中文教程、示例索引、问题互助和实践分享。
+          如果你刚听说 Dora，这里会告诉你先装什么、先看什么、遇到问题去哪里问。
+          <br class="hidden md:inline" />
+          目标很简单：让每个人都能从 <span class="mono font-medium text-ink">5 分钟跑通 demo</span>
+          走到参与真实机器人项目。
+        </p>
+
         <div class="flex flex-wrap items-center justify-center gap-3 mb-12 rise d4">
           <a href="/guide/quick-start" class="dora-btn dora-btn-primary">
-            <span>⚡ 5 分钟跑通第一个示例</span>
+            <span>5 分钟跑通第一个示例</span>
             <svg class="w-4 h-4" viewBox="0 0 20 20" fill="currentColor">
               <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd" />
             </svg>
           </a>
-          <a href="/guide/concepts" class="dora-btn dora-btn-secondary">先了解它是什么</a>
+          <a href="#path" class="dora-btn dora-btn-secondary">查看学习路线</a>
+          <a href="/community" class="dora-btn dora-btn-secondary">加入社区</a>
         </div>
 
         <!-- 安装命令 -->
@@ -72,24 +74,23 @@ function copyInstall() {
           </div>
         </div>
 
-        <!-- 核心指标 -->
         <div class="grid grid-cols-2 md:grid-cols-4 gap-6 pt-10 border-t max-w-4xl mx-auto rise d5"
              style="border-color: var(--dora-line);">
           <div class="text-center">
-            <div class="display text-3xl text-ink mb-1">17<span class="text-brand">×</span></div>
-            <div class="text-xs text-ink-3 leading-relaxed">快过 ROS 2<br />（官方 benchmark）</div>
+            <div class="display text-3xl text-ink mb-1">Start</div>
+            <div class="text-xs text-ink-3 leading-relaxed">安装、概念、Demo<br />新手路径</div>
           </div>
           <div class="text-center">
-            <div class="display text-3xl text-ink mb-1">&lt;1<span class="text-ink-4 text-lg">ms</span></div>
-            <div class="text-xs text-ink-3 leading-relaxed">节点间<br />通信延迟</div>
+            <div class="display text-3xl text-ink mb-1">Build</div>
+            <div class="text-xs text-ink-3 leading-relaxed">Python / Rust / C++<br />节点开发</div>
           </div>
           <div class="text-center">
             <div class="display text-3xl text-ink mb-1">{{ stats.stars }}</div>
-            <div class="text-xs text-ink-3 leading-relaxed">GitHub Star<br />（实时更新）</div>
+            <div class="text-xs text-ink-3 leading-relaxed">GitHub Star<br />上游项目数据</div>
           </div>
           <div class="text-center">
-            <div class="display text-3xl text-ink mb-1">4</div>
-            <div class="text-xs text-ink-3 leading-relaxed">支持语言<br />Rust / Py / C / C++</div>
+            <div class="display text-3xl text-ink mb-1">Join</div>
+            <div class="text-xs text-ink-3 leading-relaxed">微信群 / Discussions<br />问题互助</div>
           </div>
         </div>
       </div>

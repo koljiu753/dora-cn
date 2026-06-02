@@ -7,6 +7,7 @@ import ConceptCards from './ConceptCards.vue'
 import QuickStartSteps from './QuickStartSteps.vue'
 import ExampleGallery from './ExampleGallery.vue'
 import LearningPath from './LearningPath.vue'
+import CommunityPrograms from './CommunityPrograms.vue'
 import CommunityFeed from './CommunityFeed.vue'
 import FAQAccordion from './FAQAccordion.vue'
 import FinalCTA from './FinalCTA.vue'
@@ -24,6 +25,7 @@ import SiteFooter from './SiteFooter.vue'
       <QuickStartSteps />
       <ExampleGallery />
       <LearningPath />
+      <CommunityPrograms />
       <CommunityFeed />
       <FAQAccordion />
       <FinalCTA />
